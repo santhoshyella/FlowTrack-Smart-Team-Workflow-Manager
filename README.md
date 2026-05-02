@@ -82,7 +82,7 @@ npm run frontend
 #### Backend (.env)
 ```
 PORT=5000
-MONGO_URI=mongodb+srv://WorkFlow:1234@cluster0.04w5zln.mongodb.net/?appName=Cluster0
+MONGO_URI=mongodb+srv://WorkFlow:password@cluster0.04w5zln.mongodb.net/?appName=Cluster0
 JWT_SECRET=flowtrack_jwt_secret_key_2024_production_secure_random_string
 CLIENT_URL=https://flowtrack-frontend.up.railway.app
 ```
