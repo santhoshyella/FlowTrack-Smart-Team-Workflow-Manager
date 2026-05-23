@@ -78,6 +78,37 @@ const TaskCard = ({ task, onStatusChange, updating = false }) => {
         </span>
       </div>
 
+      {task.aiSummary || (task.aiSubTasks && task.aiSubTasks.length > 0) ? (
+        <div className="task-ai-analysis">
+          <div className="ai-analysis-header">
+            <span className="ai-pill">✨ Antigravity AI</span>
+            {task.aiRiskScore !== undefined && (
+              <span className={`ai-risk-badge risk-${task.aiRiskScore > 75 ? "high" : task.aiRiskScore > 40 ? "medium" : "low"}`}>
+                Risk: {task.aiRiskScore}%
+              </span>
+            )}
+          </div>
+
+          {task.aiSummary ? (
+            <p className="ai-summary">{task.aiSummary}</p>
+          ) : null}
+
+          {task.aiSubTasks && task.aiSubTasks.length > 0 ? (
+            <div className="ai-subtasks-container">
+              <p className="ai-subtasks-title">AI Suggested Milestones:</p>
+              <ul className="ai-subtasks-list">
+                {task.aiSubTasks.map((subTask, idx) => (
+                  <li key={idx} className="ai-subtask-item">
+                    <input type="checkbox" readOnly checked={task.status === "done"} disabled />
+                    <span>{subTask}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+
       <div className="task-actions">
         <select
           aria-label={`Update status for ${task.title}`}

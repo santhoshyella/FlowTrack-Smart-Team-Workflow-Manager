@@ -700,3 +700,165 @@ textarea:focus {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   ANTIGRAPVITY AI PREMIUM AGENTIC STYLING
+   ========================================================================== */
+
+.ai-trigger-button {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 750;
+  gap: 8px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.ai-trigger-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.ai-trigger-button:hover::before {
+  left: 100%;
+}
+
+.ai-trigger-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 50%, #db2777 100%);
+}
+
+.ai-trigger-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ai-trigger-button:disabled {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c084fc 100%);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.task-ai-analysis {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(236, 72, 153, 0.04) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.ai-analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  padding: 4px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ai-risk-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.ai-risk-badge.risk-low {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.ai-risk-badge.risk-medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.ai-risk-badge.risk-high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  animation: pulseRisk 2s infinite ease-in-out;
+}
+
+@keyframes pulseRisk {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.2); }
+  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.ai-summary {
+  font-size: 0.82rem;
+  color: #4b5563;
+  line-height: 1.4;
+  margin: 2px 0 0;
+  font-style: italic;
+  border-left: 2px solid rgba(168, 85, 247, 0.3);
+  padding-left: 8px;
+}
+
+.ai-subtasks-container {
+  margin-top: 4px;
+}
+
+.ai-subtasks-title {
+  font-size: 0.76rem;
+  font-weight: 750;
+  color: #374151;
+  margin: 0 0 6px;
+}
+
+.ai-subtasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.ai-subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+.ai-subtask-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+  accent-color: #7c3aed;
+  cursor: default;
+}

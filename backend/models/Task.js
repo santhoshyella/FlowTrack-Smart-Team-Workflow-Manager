@@ -37,6 +37,18 @@ const taskSchema = new mongoose.Schema(
     deadline: {
       type: Date,
       required: true
+    },
+    aiSubTasks: {
+      type: [String],
+      default: []
+    },
+    aiRiskScore: {
+      type: Number,
+      default: 0
+    },
+    aiSummary: {
+      type: String,
+      default: ""
     }
   },
   { timestamps: true }

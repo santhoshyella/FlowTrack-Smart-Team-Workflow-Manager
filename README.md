@@ -1,44 +1,54 @@
-# FlowTrack – Smart Team Workflow Manager
+# FlowTrack – Smart Team Workflow Manager (Powered by Antigravity AI)
 
 ## 📌 About the Project
 
-This project was built to solve a common problem I noticed while working in teams — managing tasks and tracking progress becomes confusing when everything is scattered.
+This project was built to solve a common problem noticed while working in teams — managing tasks and tracking progress becomes confusing when everything is scattered.
 
-So I created **FlowTrack**, a simple workflow manager where admins can assign tasks and team members can easily track and update their work.
+So I created **FlowTrack**, a smart workflow manager where admins can assign tasks and team members can easily track and update their work. 
 
-The main goal of this project is to keep things **simple, clear, and useful for real-world team collaboration** rather than making it overly complex.
+To bring real-world enterprise intelligence, **FlowTrack runs with the help of the Google Antigravity Agent Framework**. Unlike standard, passive MERN stack REST APIs, FlowTrack features a **Self-Muting Decision Engine** in the backend. When triggered, autonomous AI agents retrieve pending tasks, analyze workloads and deadlines, predict task completion failure risks, compile automatic subtasks, and actively write/mutate database records.
 
 ---
 
 ## ⚙️ Features
 
-* User authentication (Signup / Login using JWT)
-* Role-based access (Admin and Member)
-* Workspace creation and team management
-* Task creation and assignment
-* Task status tracking (Todo → In Progress → Done)
-* Priority system (High / Medium / Low)
-* Deadline tracking with overdue highlighting
-* Basic dashboard to view tasks and progress
+* **✨ Antigravity Workflow Optimizer Agent**: A self-mutating decision engine that automatically reads database state, predicts risks, generates checklists, and writes back updates using the official Google Generative AI SDK (`gemini-1.5-flash`).
+* **📈 Smart Task Queue**: Live updates of automated task analysis, displaying AI-generated subtasks checklist, risk meter badges, and italicized diagnostic summaries.
+* **🔒 Secure API & Environment Control**: Full environment management securing the Google Gemini AI Layer.
+* * User authentication (Signup / Login using JWT)
+* * Role-based access (Admin and Member)
+* * Workspace creation and team management
+* * Task creation and assignment
+* * Task status tracking (Todo → In Progress → Done)
+* * Priority system (High / Medium / Low)
+* * Deadline tracking with overdue highlighting
+* * Basic dashboard to view tasks and progress
 
 ---
 
 ## 🛠 Tech Stack
+
+**AI Engine:**
+
+* **Google Antigravity Agent Framework**
+* **Official Google Generative AI SDK (`gemini-1.5-flash`)**
 
 **Frontend:**
 
 * React.js
 * Vite
 * Axios
+* Lucide Icons
 
 **Backend:**
 
 * Node.js
 * Express.js
+* Dotenv
 
 **Database:**
 
-* MongoDB Atlas
+* MongoDB Atlas (Mongoose ODM)
 
 **Authentication:**
 

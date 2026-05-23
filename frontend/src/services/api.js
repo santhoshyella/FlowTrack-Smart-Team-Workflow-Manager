@@ -32,7 +32,8 @@ export const taskService = {
   all: (params = {}) => api.get("/tasks", { params }),
   create: (payload) => api.post("/tasks", payload),
   updateStatus: (id, status) => api.patch(`/tasks/${id}/status`, { status }),
-  analytics: () => api.get("/tasks/analytics/summary")
+  analytics: () => api.get("/tasks/analytics/summary"),
+  runAgent: () => api.post("/run-agent")
 };
 
 export default api;

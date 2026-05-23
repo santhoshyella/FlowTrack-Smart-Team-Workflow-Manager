@@ -26,6 +26,7 @@ const Dashboard = () => {
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
   const [updatingTask, setUpdatingTask] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
 
   const loadDashboard = useCallback(async () => {
     setLoading(true);
@@ -86,6 +87,22 @@ const Dashboard = () => {
     }
   };
 
+  const handleRunAgent = async () => {
+    setAiLoading(true);
+    setNotice("");
+    setError("");
+
+    try {
+      const response = await taskService.runAgent();
+      setNotice(`Antigravity Agent ran successfully! Optimized ${response.data.updatedTasksCount} tasks.`);
+      await loadDashboard();
+    } catch (requestError) {
+      setError(requestError.response?.data?.message || "Antigravity AI Agent encountered an error.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
   const updateTaskStatus = async (taskId, status) => {
     setUpdatingTask(taskId);
     setError("");
@@ -113,6 +130,15 @@ const Dashboard = () => {
           <p className="eyebrow">{user?.role}</p>
           <h1>Dashboard</h1>
         </div>
+        {user?.role === "admin" ? (
+          <button
+            className="ai-trigger-button"
+            disabled={aiLoading}
+            onClick={handleRunAgent}
+          >
+            <span>{aiLoading ? "✨ Agent is thinking..." : "✨ Run Antigravity AI Agent"}</span>
+          </button>
+        ) : null}
       </div>
 
       {error ? <p className="form-error">{error}</p> : null}
