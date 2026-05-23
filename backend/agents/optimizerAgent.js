@@ -4,7 +4,7 @@ const dbTools = require("./dbTools");
 /**
  * Executes the Workflow Optimizer Agent pipeline.
  * 1. Fetches pending tasks from MongoDB.
- * 2. Connects to Gemini 1.5 Flash to analyze them.
+ * 2. Connects to Gemini 2.5 Flash to analyze them.
  * 3. Parses structured JSON updates.
  * 4. Calls database write tools to update MongoDB with the AI analytics.
  * @returns {Promise<Object>} Execution report.
@@ -27,7 +27,10 @@ async function runWorkflowOptimizer() {
 
   // 2. Initialize Google Generative AI SDK & Model
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel(
+    { model: "gemini-2.5-flash" },
+    { apiVersion: "v1" }
+  );
 
   // 3. Format the tasks for the prompt to supply clean context
   const currentLocalTime = new Date().toLocaleString();
