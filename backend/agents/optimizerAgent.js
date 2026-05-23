@@ -29,7 +29,7 @@ async function runWorkflowOptimizer() {
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel(
     { model: "gemini-2.5-flash" },
-    { apiVersion: "v1" }
+    { apiVersion: "v1beta" }
   );
 
   // 3. Format the tasks for the prompt to supply clean context
