@@ -46,10 +46,7 @@ const createWorkspace = async (req, res) => {
 
 const getWorkspaces = async (req, res) => {
   const userId = req.user._id;
-  const filter =
-    req.user.role === "admin"
-      ? { $or: [{ createdBy: userId }, { members: userId }] }
-      : { members: userId };
+  const filter = { $or: [{ createdBy: userId }, { members: userId }] };
 
   const workspaces = await Workspace.find(filter)
     .populate("createdBy", "name email role")

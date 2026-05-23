@@ -56,7 +56,8 @@ To bring real-world enterprise intelligence, **FlowTrack runs with the help of t
 
 **Deployment:**
 
-* Railway
+* Backend: Railway
+* Frontend: Vercel
 
 ---
 
@@ -65,42 +66,65 @@ To bring real-world enterprise intelligence, **FlowTrack runs with the help of t
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/flowtrack.git
+git clone https://github.com/santhoshyella/FlowTrack-Smart-Team-Workflow-Manager.git
 cd flowtrack
 ```
 
 ---
 
-### 2. Backend Setup
+### 2. Local Development Setup
 
 ```bash
-cd backend
-npm install
-```
+# Install all dependencies
+npm run install:all
 
-Create a `.env` file:
+# Run backend (development)
+npm run backend
 
-```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
-
-Run backend:
-
-```bash
-npm run dev
+# Run frontend (development)
+npm run frontend
 ```
 
 ---
 
-### 3. Frontend Setup
+### 3. Environment Variables
 
-```bash
-cd frontend
-npm install
-npm run dev
+#### Backend (.env)
 ```
+PORT=5000
+MONGO_URI=mongodb+srv://WorkFlow:password@cluster0.04w5zln.mongodb.net/?appName=Cluster0
+JWT_SECRET=flowtrack_jwt_secret_key_2024_production_secure_random_string
+CLIENT_URL=https://flowtrack-frontend.up.railway.app
+```
+
+#### Frontend (.env for local development)
+```
+VITE_API_URL=http://localhost:5000
+```
+
+---
+
+## 🌐 Production Deployment
+
+### Backend (Railway)
+
+1. Connect your GitHub repository to Railway
+2. Set environment variables in Railway dashboard:
+   - `PORT`: `5000`
+   - `MONGO_URI`: Your MongoDB Atlas connection string
+   - `JWT_SECRET`: A secure random string
+   - `CLIENT_URL`: `https://flowtrack-frontend.up.railway.app`
+
+### Frontend (Vercel)
+
+1. Connect your GitHub repository to Vercel
+2. Vercel will automatically detect the build settings from `vercel.json`
+3. The environment variable `VITE_API_URL` is already configured in `vercel.json`
+
+### Production URLs
+
+- **Frontend**: https://flowtrack-frontend-production.up.railway.app
+- **Backend API**: https://flowtrack-api.up.railway.app
 
 ---
 
@@ -158,7 +182,7 @@ Santhosh Yella
 
 ## 🔗 Links
 
-* Live App: (Add after deployment)
-* GitHub Repo: (Your repo link)
+* Live App: https://flowtrack-frontend-production.up.railway.app
+* GitHub Repo: https://github.com/santhoshyella/FlowTrack-Smart-Team-Workflow-Manager.git
 
 ---
